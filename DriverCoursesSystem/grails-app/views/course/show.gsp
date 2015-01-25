@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${courseInstance?.endCourse}">
-				<li class="fieldcontain">
-					<span id="endCourse-label" class="property-label"><g:message code="course.endCourse.label" default="End Course" /></span>
-					
-						<span class="property-value" aria-labelledby="endCourse-label"><g:formatDate date="${courseInstance?.endCourse}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${courseInstance?.startCourse}">
 				<li class="fieldcontain">
 					<span id="startCourse-label" class="property-label"><g:message code="course.startCourse.label" default="Start Course" /></span>
@@ -50,20 +41,29 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${courseInstance?.teacher}">
+				<g:if test="${courseInstance?.endCourse}">
 				<li class="fieldcontain">
-					<span id="teacher-label" class="property-label"><g:message code="course.teacher.label" default="Teacher" /></span>
+					<span id="endCourse-label" class="property-label"><g:message code="course.endCourse.label" default="End Course" /></span>
 					
-						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${courseInstance?.teacher?.id}">${courseInstance?.teacher?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="endCourse-label"><g:formatDate date="${courseInstance?.endCourse}" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${courseInstance?.uniqueNumebr}">
+				<g:if test="${courseInstance?.drivingTeacher}">
 				<li class="fieldcontain">
-					<span id="uniqueNumebr-label" class="property-label"><g:message code="course.uniqueNumebr.label" default="Unique Numebr" /></span>
+					<span id="drivingTeacher-label" class="property-label"><g:message code="course.drivingTeacher.label" default="Driving Teacher" /></span>
 					
-						<span class="property-value" aria-labelledby="uniqueNumebr-label"><g:fieldValue bean="${courseInstance}" field="uniqueNumebr"/></span>
+						<span class="property-value" aria-labelledby="drivingTeacher-label"><g:link controller="teacher" action="show" id="${courseInstance?.drivingTeacher?.id}">${courseInstance?.drivingTeacher?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${courseInstance?.theoryTeacher}">
+				<li class="fieldcontain">
+					<span id="theoryTeacher-label" class="property-label"><g:message code="course.theoryTeacher.label" default="Theory Teacher" /></span>
+					
+						<span class="property-value" aria-labelledby="theoryTeacher-label"><g:link controller="teacher" action="show" id="${courseInstance?.theoryTeacher?.id}">${courseInstance?.theoryTeacher?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

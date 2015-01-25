@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list teacher">
 			
+				<g:if test="${teacherInstance?.car}">
+				<li class="fieldcontain">
+					<span id="car-label" class="property-label"><g:message code="teacher.car.label" default="Car" /></span>
+					
+						<span class="property-value" aria-labelledby="car-label"><g:link controller="cars" action="show" id="${teacherInstance?.car?.id}">${teacherInstance?.car?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${teacherInstance?.firstName}">
 				<li class="fieldcontain">
 					<span id="firstName-label" class="property-label"><g:message code="teacher.firstName.label" default="First Name" /></span>
 					
 						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${teacherInstance}" field="firstName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teacherInstance?.middleName}">
-				<li class="fieldcontain">
-					<span id="middleName-label" class="property-label"><g:message code="teacher.middleName.label" default="Middle Name" /></span>
-					
-						<span class="property-value" aria-labelledby="middleName-label"><g:fieldValue bean="${teacherInstance}" field="middleName"/></span>
 					
 				</li>
 				</g:if>
@@ -50,24 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${teacherInstance?.cars}">
+				<g:if test="${teacherInstance?.subject}">
 				<li class="fieldcontain">
-					<span id="cars-label" class="property-label"><g:message code="teacher.cars.label" default="Cars" /></span>
+					<span id="subject-label" class="property-label"><g:message code="teacher.subject.label" default="Subject" /></span>
 					
-						<g:each in="${teacherInstance.cars}" var="c">
-						<span class="property-value" aria-labelledby="cars-label"><g:link controller="cars" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teacherInstance?.courses}">
-				<li class="fieldcontain">
-					<span id="courses-label" class="property-label"><g:message code="teacher.courses.label" default="Courses" /></span>
-					
-						<g:each in="${teacherInstance.courses}" var="c">
-						<span class="property-value" aria-labelledby="courses-label"><g:link controller="course" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="subject-label"><g:fieldValue bean="${teacherInstance}" field="subject"/></span>
 					
 				</li>
 				</g:if>

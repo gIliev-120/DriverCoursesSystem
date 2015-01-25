@@ -26,13 +26,13 @@
 					
 						<g:sortableColumn property="category" title="${message(code: 'course.category.label', default: 'Category')}" />
 					
-						<g:sortableColumn property="endCourse" title="${message(code: 'course.endCourse.label', default: 'End Course')}" />
-					
 						<g:sortableColumn property="startCourse" title="${message(code: 'course.startCourse.label', default: 'Start Course')}" />
 					
-						<th><g:message code="course.teacher.label" default="Teacher" /></th>
+						<g:sortableColumn property="endCourse" title="${message(code: 'course.endCourse.label', default: 'End Course')}" />
 					
-						<g:sortableColumn property="uniqueNumebr" title="${message(code: 'course.uniqueNumebr.label', default: 'Unique Numebr')}" />
+						<th><g:message code="course.drivingTeacher.label" default="Driving Teacher" /></th>
+					
+						<th><g:message code="course.theoryTeacher.label" default="Theory Teacher" /></th>
 					
 					</tr>
 				</thead>
@@ -42,13 +42,13 @@
 					
 						<td><g:link action="show" id="${courseInstance.id}">${fieldValue(bean: courseInstance, field: "category")}</g:link></td>
 					
-						<td><g:formatDate date="${courseInstance.endCourse}" /></td>
-					
 						<td><g:formatDate date="${courseInstance.startCourse}" /></td>
 					
-						<td>${fieldValue(bean: courseInstance, field: "teacher")}</td>
+						<td><g:formatDate date="${courseInstance.endCourse}" /></td>
 					
-						<td>${fieldValue(bean: courseInstance, field: "uniqueNumebr")}</td>
+						<td>${fieldValue(bean: courseInstance, field: "drivingTeacher")}</td>
+					
+						<td>${fieldValue(bean: courseInstance, field: "theoryTeacher")}</td>
 					
 					</tr>
 				</g:each>

@@ -1,26 +1,25 @@
 package com.drivercoursessystem.adminpanel
 
 class Students {
+	String firstName
+	String lastName
+	int years
+	String gender
+	String email
+	String mobilePhone
+	String course
 	
-	String firstName;
-	String middleName;
-	String lastName;
-	String toString() {
-	"$firstName $middleName $lastName"
-	};
-	String email;
-	String mobilePhone;
-	String homePhone;
-	
+	String fullName(){
+		"$firstName $lastName"
+	}
 	
     static constraints = {
-		firstName()
-		middleName()
+    	firstName()
 		lastName()
+		years(range:17..60)
+		gender(inList:["Male","Female"])
 		email(email:true)
-		mobilePhone minSize: 13,maxSize: 13
-		homePhone minSize: 12,maxSize: 12
-		
-		
-    }
+		mobilePhone(size:13..13)
+		course()
+	}
 }

@@ -32,20 +32,29 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentsInstance?.middleName}">
-				<li class="fieldcontain">
-					<span id="middleName-label" class="property-label"><g:message code="students.middleName.label" default="Middle Name" /></span>
-					
-						<span class="property-value" aria-labelledby="middleName-label"><g:fieldValue bean="${studentsInstance}" field="middleName"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${studentsInstance?.lastName}">
 				<li class="fieldcontain">
 					<span id="lastName-label" class="property-label"><g:message code="students.lastName.label" default="Last Name" /></span>
 					
 						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${studentsInstance}" field="lastName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentsInstance?.years}">
+				<li class="fieldcontain">
+					<span id="years-label" class="property-label"><g:message code="students.years.label" default="Years" /></span>
+					
+						<span class="property-value" aria-labelledby="years-label"><g:fieldValue bean="${studentsInstance}" field="years"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentsInstance?.gender}">
+				<li class="fieldcontain">
+					<span id="gender-label" class="property-label"><g:message code="students.gender.label" default="Gender" /></span>
+					
+						<span class="property-value" aria-labelledby="gender-label"><g:fieldValue bean="${studentsInstance}" field="gender"/></span>
 					
 				</li>
 				</g:if>
@@ -68,11 +77,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentsInstance?.homePhone}">
+				<g:if test="${studentsInstance?.course}">
 				<li class="fieldcontain">
-					<span id="homePhone-label" class="property-label"><g:message code="students.homePhone.label" default="Home Phone" /></span>
+					<span id="course-label" class="property-label"><g:message code="students.course.label" default="Course" /></span>
 					
-						<span class="property-value" aria-labelledby="homePhone-label"><g:fieldValue bean="${studentsInstance}" field="homePhone"/></span>
+						<span class="property-value" aria-labelledby="course-label"><g:fieldValue bean="${studentsInstance}" field="course"/></span>
 					
 				</li>
 				</g:if>

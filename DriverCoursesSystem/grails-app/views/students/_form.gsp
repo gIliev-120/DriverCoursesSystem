@@ -11,21 +11,30 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: studentsInstance, field: 'middleName', 'error')} required">
-	<label for="middleName">
-		<g:message code="students.middleName.label" default="Middle Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="middleName" required="" value="${studentsInstance?.middleName}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: studentsInstance, field: 'lastName', 'error')} required">
 	<label for="lastName">
 		<g:message code="students.lastName.label" default="Last Name" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="lastName" required="" value="${studentsInstance?.lastName}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: studentsInstance, field: 'years', 'error')} required">
+	<label for="years">
+		<g:message code="students.years.label" default="Years" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="years" from="${17..60}" class="range" required="" value="${fieldValue(bean: studentsInstance, field: 'years')}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: studentsInstance, field: 'gender', 'error')} required">
+	<label for="gender">
+		<g:message code="students.gender.label" default="Gender" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="gender" from="${studentsInstance.constraints.gender.inList}" required="" value="${studentsInstance?.gender}" valueMessagePrefix="students.gender"/>
 
 </div>
 
@@ -47,12 +56,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: studentsInstance, field: 'homePhone', 'error')} required">
-	<label for="homePhone">
-		<g:message code="students.homePhone.label" default="Home Phone" />
+<div class="fieldcontain ${hasErrors(bean: studentsInstance, field: 'course', 'error')} required">
+	<label for="course">
+		<g:message code="students.course.label" default="Course" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="homePhone" maxlength="12" required="" value="${studentsInstance?.homePhone}"/>
+	<g:textField name="course" required="" value="${studentsInstance?.course}"/>
 
 </div>
 

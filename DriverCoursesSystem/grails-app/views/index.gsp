@@ -1,7 +1,8 @@
+<%@ page import="com.drivercoursessystem.userpanel.RegistrationForm" %>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main"/>
+		
 		<title>Welcome to Grails</title>
 		<style type="text/css" media="screen">
 			#status {
@@ -81,7 +82,7 @@
 		</style>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<!-- <a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
 			<h1>Application Status</h1>
 			<ul>
@@ -118,5 +119,13 @@
 				</ul>
 			</div>
 		</div>
+		 -->
+		 <div name="reg">
+		 	<g:link controller="registrationForm" action="create">Регистрация</g:link>
+		 </div>
+		 <div name="login">
+		 	<g:link controller="loginForm" actiion="authenticate">Вход</g:link>
+		 </div>
+		 
 	</body>
 </html>

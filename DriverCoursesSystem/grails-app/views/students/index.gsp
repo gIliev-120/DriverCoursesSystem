@@ -26,16 +26,17 @@
 					
 						<g:sortableColumn property="firstName" title="${message(code: 'students.firstName.label', default: 'First Name')}" />
 					
-						<g:sortableColumn property="middleName" title="${message(code: 'students.middleName.label', default: 'Middle Name')}" />
-					
 						<g:sortableColumn property="lastName" title="${message(code: 'students.lastName.label', default: 'Last Name')}" />
+					
+						<g:sortableColumn property="years" title="${message(code: 'students.years.label', default: 'Years')}" />
+					
+						<g:sortableColumn property="gender" title="${message(code: 'students.gender.label', default: 'Gender')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'students.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="mobilePhone" title="${message(code: 'students.mobilePhone.label', default: 'Mobile Phone')}" />
-					
-						<g:sortableColumn property="homePhone" title="${message(code: 'students.homePhone.label', default: 'Home Phone')}" />
-					
+						
+						<g:sortableColumn property="course" title="${message(code: 'students.course.label', default: 'Course')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -44,16 +45,17 @@
 					
 						<td><g:link action="show" id="${studentsInstance.id}">${fieldValue(bean: studentsInstance, field: "firstName")}</g:link></td>
 					
-						<td>${fieldValue(bean: studentsInstance, field: "middleName")}</td>
-					
 						<td>${fieldValue(bean: studentsInstance, field: "lastName")}</td>
+					
+						<td>${fieldValue(bean: studentsInstance, field: "years")}</td>
+					
+						<td>${fieldValue(bean: studentsInstance, field: "gender")}</td>
 					
 						<td>${fieldValue(bean: studentsInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: studentsInstance, field: "mobilePhone")}</td>
 					
-						<td>${fieldValue(bean: studentsInstance, field: "homePhone")}</td>
-					
+						<td>${fieldValue(bean: studentsInstance, field: "course")}</td>
 					</tr>
 				</g:each>
 				</tbody>

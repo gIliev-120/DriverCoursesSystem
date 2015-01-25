@@ -1,30 +1,20 @@
 package com.drivercoursessystem.adminpanel
 
-import java.awt.Checkbox;
-
 class Teacher {
 	
 	String firstName
-	
-	String middleName
 	String lastName
-	public String getLastName() {
-		return lastName;
-	}
+	String subject
 	String toString() {
-		"$firstName $middleName $lastName"
+		"$firstName $lastName"
 	}
-	//static hasMany=[course:Course,cars:Cars]
-	//static belongsTo=[Course]
-	static hasMany=[cars:Cars,courses:Course]
-	
-	
-    static constraints = {
+	Cars car
+		
+	static constraints = {
+		car(nullable:true)
 		firstName()
-		middleName()
 		lastName()
-    }
-	//Checkbox check;
-
-	
+		subject(inList:["Driving","Theory"])
+	}
+    
 }
