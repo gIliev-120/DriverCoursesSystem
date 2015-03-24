@@ -3,8 +3,9 @@ package com.drivercoursessystem.adminpanel
 class Cars {
 	String make
 	String model
+	String registrationPlate
 	String toString(){
-		"$make $model"	
+		"$model-$registrationPlate"
 	}
 	
 
@@ -12,5 +13,6 @@ class Cars {
     static constraints = {
 		make()
 		model()
+		registrationPlate(unique: true)
     }
 }

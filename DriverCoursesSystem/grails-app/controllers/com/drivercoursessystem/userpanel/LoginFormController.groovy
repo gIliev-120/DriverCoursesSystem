@@ -6,13 +6,12 @@ class LoginFormController {
 	
 	  def authenticate = {
 	    def user = RegistrationForm.findByEmailAndPassword(params.email, params.password)
-		if(params.email=="Admin" && params.password=="admin"){
-			//render "Hello u r logged as admin"
-			render(view:"admin");
-		}else if(user){
+		if(user){
 		  session.user = user
 	      render(view:"StudentInfo");
-	    }else{''
+		  
+	    }else{
+			
 	      render "Sorry Please try again."
 	      }
  }

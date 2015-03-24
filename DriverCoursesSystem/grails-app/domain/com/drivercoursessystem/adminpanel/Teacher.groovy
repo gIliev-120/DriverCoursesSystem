@@ -1,7 +1,10 @@
 package com.drivercoursessystem.adminpanel
 
+
+
+
+
 class Teacher {
-	
 	String firstName
 	String lastName
 	String subject
@@ -9,12 +12,16 @@ class Teacher {
 		"$firstName $lastName"
 	}
 	Cars car
+	
+	
 		
 	static constraints = {
 		car(nullable:true)
 		firstName()
 		lastName()
-		subject(inList:["Driving","Theory"])
+		subject(inList:["Теория","Кормуване"])
+	
 	}
     
 }
+

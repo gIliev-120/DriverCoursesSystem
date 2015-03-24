@@ -11,12 +11,12 @@
 		<a href="#list-students" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><a class="home" href="${createLink(uri: '/')}">Начало</a></li>
+				<li><g:link class="create" action="create">Запиши Курсист</g:link></li>
 			</ul>
 		</div>
 		<div id="list-students" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1>Списък Курсити</h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -24,19 +24,22 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="firstName" title="${message(code: 'students.firstName.label', default: 'First Name')}" />
+						<g:sortableColumn property="firstName" title="${message(code: 'students.firstName.label', default: 'Име')}" />
 					
-						<g:sortableColumn property="lastName" title="${message(code: 'students.lastName.label', default: 'Last Name')}" />
+						<g:sortableColumn property="lastName" title="${message(code: 'students.lastName.label', default: 'Фамилия')}" />
 					
-						<g:sortableColumn property="years" title="${message(code: 'students.years.label', default: 'Years')}" />
-					
-						<g:sortableColumn property="gender" title="${message(code: 'students.gender.label', default: 'Gender')}" />
-					
+						<th><g:message code="students.courses.label" default="Курс" /></th>
+
 						<g:sortableColumn property="email" title="${message(code: 'students.email.label', default: 'Email')}" />
 					
-						<g:sortableColumn property="mobilePhone" title="${message(code: 'students.mobilePhone.label', default: 'Mobile Phone')}" />
-						
-						<g:sortableColumn property="course" title="${message(code: 'students.course.label', default: 'Course')}" />
+						<g:sortableColumn property="mobilePhone" title="${message(code: 'students.mobilePhone.label', default: 'Мобилен тел.')}" />
+
+						<g:sortableColumn property="paidSum" title="${message(code: 'students.paidSum.label', default: 'Платена Сума')}" />
+
+						<g:sortableColumn property="restOfSum" title="${message(code: 'students.restOfSum.label', default: 'Остатък за плащане')}" />
+					
+
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -46,16 +49,16 @@
 						<td><g:link action="show" id="${studentsInstance.id}">${fieldValue(bean: studentsInstance, field: "firstName")}</g:link></td>
 					
 						<td>${fieldValue(bean: studentsInstance, field: "lastName")}</td>
-					
-						<td>${fieldValue(bean: studentsInstance, field: "years")}</td>
-					
-						<td>${fieldValue(bean: studentsInstance, field: "gender")}</td>
-					
+
+						<td>${fieldValue(bean: studentsInstance, field: "courses")}</td>
+
 						<td>${fieldValue(bean: studentsInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: studentsInstance, field: "mobilePhone")}</td>
-					
-						<td>${fieldValue(bean: studentsInstance, field: "course")}</td>
+
+						<td>${fieldValue(bean: studentsInstance, field: "paidSum")}</td>
+
+						<td>${fieldValue(bean: studentsInstance, field: "restOfSum")}</td>
 					</tr>
 				</g:each>
 				</tbody>

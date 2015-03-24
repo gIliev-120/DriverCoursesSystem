@@ -59,6 +59,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${teacherInstance?.teacherSchedules}">
+				<li class="fieldcontain">
+					<span id="teacherSchedules-label" class="property-label"><g:message code="teacher.teacherSchedules.label" default="Teacher Schedules" /></span>
+					
+						<span class="property-value" aria-labelledby="teacherSchedules-label"><g:link controller="drivingSchedules" action="show" id="${teacherInstance?.teacherSchedules?.id}">${teacherInstance?.teacherSchedules?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:teacherInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

@@ -50,15 +50,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentsInstance?.gender}">
-				<li class="fieldcontain">
-					<span id="gender-label" class="property-label"><g:message code="students.gender.label" default="Gender" /></span>
-					
-						<span class="property-value" aria-labelledby="gender-label"><g:fieldValue bean="${studentsInstance}" field="gender"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${studentsInstance?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="students.email.label" default="Email" /></span>
@@ -77,11 +68,47 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentsInstance?.course}">
+				<g:if test="${studentsInstance?.courses}">
 				<li class="fieldcontain">
-					<span id="course-label" class="property-label"><g:message code="students.course.label" default="Course" /></span>
+					<span id="courses-label" class="property-label"><g:message code="students.courses.label" default="Courses" /></span>
 					
-						<span class="property-value" aria-labelledby="course-label"><g:fieldValue bean="${studentsInstance}" field="course"/></span>
+						<span class="property-value" aria-labelledby="courses-label"><g:link controller="course" action="show" id="${studentsInstance?.courses?.id}">${studentsInstance?.courses?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentsInstance?.numberOfPaidExtraDrivingHours}">
+				<li class="fieldcontain">
+					<span id="numberOfPaidExtraDrivingHours-label" class="property-label"><g:message code="students.numberOfPaidExtraDrivingHours.label" default="Number Of Paid Extra Driving Hours" /></span>
+					
+						<span class="property-value" aria-labelledby="numberOfPaidExtraDrivingHours-label"><g:fieldValue bean="${studentsInstance}" field="numberOfPaidExtraDrivingHours"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentsInstance?.paidExtraDrivingHoursSum}">
+				<li class="fieldcontain">
+					<span id="paidExtraDrivingHoursSum-label" class="property-label"><g:message code="students.paidExtraDrivingHoursSum.label" default="Paid Extra Driving Hours Sum" /></span>
+					
+						<span class="property-value" aria-labelledby="paidExtraDrivingHoursSum-label"><g:fieldValue bean="${studentsInstance}" field="paidExtraDrivingHoursSum"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentsInstance?.paidSum}">
+				<li class="fieldcontain">
+					<span id="paidSum-label" class="property-label"><g:message code="students.paidSum.label" default="Paid Sum" /></span>
+					
+						<span class="property-value" aria-labelledby="paidSum-label"><g:fieldValue bean="${studentsInstance}" field="paidSum"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentsInstance?.restOfSum}">
+				<li class="fieldcontain">
+					<span id="restOfSum-label" class="property-label"><g:message code="students.restOfSum.label" default="Rest Of Sum" /></span>
+					
+						<span class="property-value" aria-labelledby="restOfSum-label"><g:fieldValue bean="${studentsInstance}" field="restOfSum"/></span>
 					
 				</li>
 				</g:if>

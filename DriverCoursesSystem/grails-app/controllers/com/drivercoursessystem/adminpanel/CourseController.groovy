@@ -19,8 +19,9 @@ class CourseController {
         respond courseInstance
     }
 
-    def create() {
-        respond new Course(params)
+    def create(Course c) {
+       respond new Course(params)
+	   
     }
 
     @Transactional

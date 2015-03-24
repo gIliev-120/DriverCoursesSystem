@@ -42,8 +42,25 @@ class RegistrationFormController {
         }
 
         registrationFormInstance.save flush:true
+        //println registrationFormInstance.email;
+
+
+
 		int myID=registrationFormInstance.id
-		//println myID
+
+
+
+        sendMail {
+            to registrationFormInstance.email
+            subject "Записване за курс"
+            body "Здравейте ${registrationFormInstance.firstName} ${registrationFormInstance.lastName}!" +
+                    " Вие се записахте за курс категория ${registrationFormInstance.course}." +
+                    "Курсът ви започва на ${registrationFormInstance.course.startCourse.getDateString()} и трябва да заввърши на ${registrationFormInstance.course.endCourse.getDateString()}." +
+                    "Ако не извършите плащане до 3 работни дни считано от ${new Date().getDateString()} , вашата регистрация ще се анулира." +
+                    "За повече информация 28943298"
+
+        }
+
 		GetRegistredUsersService.serviceMethod(myID)
         request.withFormat {
             form multipartForm {

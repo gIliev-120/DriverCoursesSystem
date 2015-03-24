@@ -9,25 +9,30 @@ import grails.transaction.Transactional
 class GetRegistredUsersService {
 
 	def serviceMethod(int ids) {
-		def demo = RegistrationForm.get(ids)
+		def registeredStudent = RegistrationForm.get(ids)
 		def RegistrationForm
-		String fName=demo.firstName
-		String lName=demo.lastName
-		int yearss=demo.years
-		String gend=demo.gender
-		String emails=demo.email
-		String mPhone=demo.mobilePhone
-		String courses=demo.course
-		
+		String fName=registeredStudent.firstName
+		String lName=registeredStudent.lastName
+		int yearss=registeredStudent.years
+		String emails=registeredStudent.email
+		String mPhone=registeredStudent.mobilePhone
+		String courses=registeredStudent.course
+		Double pSum=0;
+		Double rOfSum=0;
+		int nOfPaidExtraDrivingHours=0;
+		Double pExtraDrivingHoursSum=0;
 		new Students(
 			firstName:fName,
-			lastName:lName,	
+			lastName:lName,
 			years:yearss,
-			gender:gend,
 			email:emails,
 			mobilePhone:mPhone,
-			course:courses).save();
-		
+			course:courses,
+			paidSum: pSum,
+			restOfSum: rOfSum,
+			numberOfPaidExtraDrivingHours: nOfPaidExtraDrivingHours,
+			paidExtraDrivingHoursSum: pExtraDrivingHoursSum).save();
+
 			}
 	
 }

@@ -10,7 +10,7 @@ class RegistrationForm {
 	String email
 	String firstName
 	String lastName
-	String gender
+
 	int years
 	String mobilePhone
 	Course course
@@ -26,7 +26,6 @@ class RegistrationForm {
 		email(email:true)
 		firstName()
 		lastName()
-		gender (inList:["Male", "Female"])
 		years(range:17..60)
 		mobilePhone(size:13..13)
 		course ()

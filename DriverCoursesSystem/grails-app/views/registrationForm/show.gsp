@@ -104,7 +104,6 @@
 				</li>
 				</g:if>
 			
-			
 			</ol>
 			<g:form url="[resource:registrationFormInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

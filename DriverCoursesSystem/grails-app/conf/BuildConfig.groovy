@@ -63,6 +63,8 @@ grails.project.dependency.resolution = {
         compile ":asset-pipeline:1.9.6"
 		compile ":calendar:1.2.1"
 		compile ":jquery-ui:1.10.4"
+        compile ":class-domain-uml:0.1.5"
+        compile ":mail:1.0.7"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.17"

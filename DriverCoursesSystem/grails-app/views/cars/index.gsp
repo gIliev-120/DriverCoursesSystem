@@ -11,12 +11,12 @@
 		<a href="#list-cars" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><a class="home" href="${createLink(uri: '/')}">Начало</a></li>
+				<li><g:link class="create" action="create">Добави автомобил</g:link></li>
 			</ul>
 		</div>
 		<div id="list-cars" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1>Автомобили</h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -24,20 +24,23 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="make" title="${message(code: 'cars.make.label', default: 'Make')}" />
+						<g:sortableColumn property="make" title="${message(code: 'cars.make.label', default: 'Марка')}" />
 					
-						<g:sortableColumn property="model" title="${message(code: 'cars.model.label', default: 'Model')}" />
+						<g:sortableColumn property="model" title="${message(code: 'cars.model.label', default: 'Модел')}" />
+
+						<g:sortableColumn property="registrationPlate" title="${message(code: 'cars.registrationPlate.label', default: 'Регистрационен номер')}" />
 					
 					</tr>
 				</thead>
 				<tbody>
-				<g:each in="${carsInstanceList}" status="i" var="carsInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${carsInstance.id}">${fieldValue(bean: carsInstance, field: "make")}</g:link></td>
-					
-						<td>${fieldValue(bean: carsInstance, field: "model")}</td>
-					
+					<g:each in="${carsInstanceList}" status="i" var="carsInstance">
+						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+						
+							<td><g:link action="show" id="${carsInstance.id}">${fieldValue(bean: carsInstance, field: "make")}</g:link></td>
+						
+							<td>${fieldValue(bean: carsInstance, field: "model")}</td>
+
+							<td>${fieldValue(bean: carsInstance, field: "registrationPlate")}</td>
 					</tr>
 				</g:each>
 				</tbody>
